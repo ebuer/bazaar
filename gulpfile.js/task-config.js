@@ -16,8 +16,10 @@ module.exports = {
         provide: {
             $: "jquery",
             jQuery: "jquery",
+            'window.jQuery': 'jquery',
             axios: "axios",
             Vue: "vue/dist/vue.js",
+            // vegas: "vegas",
         }
     },
 

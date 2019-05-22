@@ -3,12 +3,92 @@
 <head>
     <meta charset="utf-8">
     <title>Kapalıçarşı</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="app">
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><i class="logo-icon fab fa-opera"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Anasayfa <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Fotoğraflar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Fiyatlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Talep Formu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">İletişim</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </nav>
+    </div>
     {% block content %} {% endblock %}
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="left">
+                        <div class="content">
+                            <h3 class="title">Kapalıçarşı</h3>
+                            <i class="logo-icon fab fa-opera"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="right">
+                        <div class="row">
+                            <div class="col">
+                                <ul class="social-media-list d-inline-block float-right">
+                                    <li class="item">
+                                        <a class="link facebook" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li class="item">
+                                        <a class="link instagram" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li class="item">
+                                        <a class="link twitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="#" class="mob-whatsapp d-md-none">
+        Whatsapp'dan ulaşmak için tıkla
+    </a>
 </div>
 {% block javascript %}
 <script src="javascripts/app.js"></script>

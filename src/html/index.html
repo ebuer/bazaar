@@ -1,10 +1,64 @@
 {% extends 'layouts/application.html' %}
 {% block content %}
-{% raw %}
 
-<div>
-    Bazaar project start
+
+<div class="page main">
+    <div class="top">
+        <div class="main-slider js-main-slider">
+        </div>
+    </div>
+    <div class="middle">
+        <div class="container">
+            <div class="row">
+
+                {% for item in home %}
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="cat-card">
+                        <div class="head"><h3 class="title">{{item.title}}</h3></div>
+                        <div class="body" data-title="{{item.imgtitle}}">
+                            <img src="images/{{item.img}}" alt="">
+                            <a class="link" href="#">İncele</a>
+                        </div>
+                        <div class="base js-auto-height">
+                            <a href="#">
+                                <span class="title">{{item.subtitle}}</span>
+                                <p class="text">
+                                    {{item.text}}
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="parallax" data-bg="images/wedding1.jpg">
+            <div class="content">
+                <a class="inner" href="#">
+                    <span class="title">Masallarınızı Ertelemeyin</span>
+                    <small class="subtitle">Masal Wedding & Event</small>
+                </a>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.351319234219!2d31.787619215171954!3d41.453294979258196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c7c7b743e1e65%3A0xcc7534d354747f6a!2zS2FwYWzEsSDDh2FyxZ_EsSBPcmdhbml6YXN5b24!5e0!3m2!1str!2str!4v1558553057476!5m2!1str!2str"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="parallax" data-bg="images/wedding1.jpg">
+            <div class="content">
+                <a class="inner" href="#">
+                    <span class="title">Hayallerinizi Ertelemeyin</span>
+                    <small class="subtitle">Bizimle İletişime geçin</small>
+                </a>
+            </div>
+        </div>
+
+    </div>
 </div>
 
+{% raw %}
 {% endraw %}
 {% endblock %}

@@ -1,0 +1,22 @@
+@mixin list-light-text {
+  font-size: 12px;
+  font-weight: 400;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@mixin reset-a {
+  outline: none !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+@mixin elipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin box-shadow {
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.1);
+}

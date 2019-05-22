@@ -1,3 +1,67 @@
 {
-  "message": "App is Ready"
+  "home": [
+    {
+      "title": "Düğün Organizasyonları",
+      "img": "wedding9.jpg",
+      "imgtitle": "Düğün",
+      "subtitle": "MASAL GİBİ DÜĞÜNLER",
+      "text": "Yeni hayatınıza başlarken, hayallerinizdeki düğünü gerçekleştirmek istemez misiniz?"
+    },
+    {
+      "title": "Kına Organizasyonu",
+      "img": "wedding8.jpg",
+      "imgtitle": "Kına",
+      "subtitle": "HAYAL ETTİĞİNİZDEN FAZLASI",
+      "text": "Genç kızlarımızın hayatlarının vazgeçilmez bu geleneksel gecesinde unutulmaz bir gün yaşayın."
+    },
+    {
+      "title": "Kurumsal Organizasyon",
+      "img": "wedding7.jpg",
+      "imgtitle": "Kurumsal",
+      "subtitle": "FIRMANIZA OZEL",
+      "text": "Farklı tarzlarda firmanızın kimliğine uygun konseptler, yaratıcı fikirlerle firmanıza hayat verin."
+    },
+    {
+      "title": "Mezuniyet Organizasyonları",
+      "img": "wedding6.jpg",
+      "imgtitle": "Mezuniyet",
+      "subtitle": "KEP TÖRENİ",
+      "text": "Herkes rüya gibi bir mezuniyet balosu yaşamak ister. Mezuniyet organizasyonunuzu görsel bir şölene dönüştürüyoruz."
+    },
+    {
+      "title": "Ses Sistemi",
+      "img": "wedding5.jpg",
+      "imgtitle": "Ses",
+      "subtitle": "DJ SAHNE",
+      "text": "Düğün festival konser vb. tüm açık hava ve kapalı salon etkinliklerinde, mekana ve amaca uygun çözümler ile ortama farklılık katın."
+    },
+    {
+      "title": "Fotoğraf Kamera Çekimi",
+      "img": "wedding4.jpg",
+      "imgtitle": "Fotoğraf",
+      "subtitle": "ÖZEL ANLAR",
+      "text": "Bu zamanları kalıcı kılan en özel anlarda, profesyonel fotoğrafçımızla, keyifli ve rahat bir çekim olmasını sağlıyoruz."
+    },
+    {
+      "title": "Doğum Günü",
+      "img": "wedding3.jpg",
+      "imgtitle": "Doğum Günü",
+      "subtitle": "DOĞUM GÜNÜ PARTİLERİ",
+      "text": "Sevdiklerinize süpriz bir doğum günü partisi yapmak istiyorsanız, çok güzel doğum günü temalarıyla bu özel güne renk katın."
+    },
+    {
+      "title": "Sevgililer Günü",
+      "img": "wedding2.jpg",
+      "imgtitle": "Sevgililer Günü",
+      "subtitle": "SEVGİLİLER GÜNÜ SÜPRİZİ",
+      "text": "Romantik masa ve oda dekoru süslemeleri ile sevgilinize eşsiz ve unutulmaz bir armağan verin"
+    },
+    {
+      "title": "Ekipman Satışı",
+      "img": "wedding1.jpg",
+      "imgtitle": "Ekipman Satış ve Kiralama",
+      "subtitle": "ORGANİZASYON EKİPMANLARI",
+      "text": "Birbirinden özel organizasyon ekipmanlarımızla Türkiye'nin her yerine tedarik yapmaktayız"
+    }
+  ]
 }
