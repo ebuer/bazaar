@@ -4,8 +4,9 @@ import '../../node_modules/@fortawesome/fontawesome-free/js/all'
 import './base/vue'
 import './base/custom'
 
+// TODO get src and text from html
 $('.js-main-slider').vegas({
-    delay: 20000,
+    delay: 5000,
     slides: [
         {src: '../images/wedding1.jpg', overlaytext: "Primerie depuis les années 1500, quand un imprimeur anonyme as"},
         {src: '../images/wedding2.jpg', overlaytext: "Dans la composition et la mise en"},

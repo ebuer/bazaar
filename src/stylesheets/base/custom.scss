@@ -1,4 +1,5 @@
 $dark-red: #350909;
+$white: #fbfcfc;
 .header {
   position: fixed;
   top: 0;
@@ -17,6 +18,49 @@ $dark-red: #350909;
     .nav-item {
       .nav-link {
         color: #fff;
+        position: relative;
+        overflow: hidden;
+        &:before {
+          content: '';
+          background-color: #fff;
+          position: absolute;
+          bottom: 0;
+          left: 0.5rem;
+          height: 1px;
+          width: calc(100% - 1rem);
+          transition: 300ms;
+          opacity: 0;
+          transform: translateY(-5px);
+        }
+        &:hover, &.active {
+          &:before {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+    .kc-form {
+      .form-control {
+        border-radius: 0;
+        margin-right: 0;
+        border: 0;
+        height: calc(1.5em + 0.75rem + 2.5px);
+        margin-bottom: -1px;
+      }
+      .btn-submit {
+        margin-left: -4px;
+        border-left: 0;
+        border-radius: 0;
+        border-color: $white;
+        outline: none !important;
+        box-shadow: none !important;
+        .icon {
+          color: $white;
+        }
+        &:hover {
+          background-color: transparent;
+        }
       }
     }
   }
@@ -74,6 +118,20 @@ $dark-red: #350909;
       }
     }
   }
+  .info-list {
+    .item {
+      .icon {
+        color: #fbfcfc;
+        vertical-align: middle;
+      }
+      .text {
+        color: #fbfcfc;
+        font-size: 12px;
+        vertical-align: middle;
+        padding-left: 5px;
+      }
+    }
+  }
 }
 
 .page {
@@ -92,6 +150,9 @@ $dark-red: #350909;
           transform: translateY(-30%);
           opacity: 0;
           font-size: 20px;
+          padding: 15px;
+          background-color: rgba(0, 0, 0, 0.4);
+
           &.active {
             opacity: 1;
             transform: translateY(-50%);
