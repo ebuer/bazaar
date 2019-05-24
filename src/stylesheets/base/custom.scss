@@ -1,3 +1,4 @@
+@import "../mixins/index";
 $dark-red: #350909;
 $white: #fbfcfc;
 .header {
@@ -20,24 +21,33 @@ $white: #fbfcfc;
         color: #fff;
         position: relative;
         overflow: hidden;
-        &:before {
-          content: '';
-          background-color: #fff;
-          position: absolute;
-          bottom: 0;
-          left: 0.5rem;
-          height: 1px;
-          width: calc(100% - 1rem);
-          transition: 300ms;
-          opacity: 0;
-          transform: translateY(-5px);
-        }
-        &:hover, &.active {
+        @include screen('minLaptop'){
           &:before {
-            opacity: 1;
-            transform: translateY(0);
+            content: '';
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0.5rem;
+            height: 1px;
+            width: calc(100% - 1rem);
+            transition: 300ms;
+            opacity: 0;
+            transform: translateY(-5px);
+          }
+          &:hover, &.active {
+            &:before {
+              opacity: 1;
+              transform: translateY(0);
+            }
           }
         }
+
+      }
+    }
+    @include screen('mobile'){
+      .navbar-toggler{
+        color: $white;
+        border-color: $white;
       }
     }
     .kc-form {
