@@ -1,0 +1,27 @@
+.page{
+  &.contact {
+    .content {
+      padding: 40px 0;
+      .map {
+        iframe {
+          width: 100%;
+          border: 0;
+          height: 300px;
+        }
+      }
+      .contact-info {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .list {
+          .item {
+            margin: 10px 0;
+            .icon {
+              font-size: 19px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

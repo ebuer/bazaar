@@ -1,9 +1,10 @@
 @import "../mixins/index";
+
 body {
   background-color: #eaeaea;
   font-family: 'Roboto', sans-serif;
 
-  @include screen('mobile'){
+  @include screen('mobile') {
     padding-bottom: 50px;
     .mob-whatsapp {
       display: flex;
@@ -19,6 +20,7 @@ body {
       color: #fff;
       font-weight: bold;
       font-size: 14px;
+
       .icon {
         font-size: 22px;
         margin-right: 10px;
@@ -32,6 +34,7 @@ a {
   color: inherit;
   text-decoration: none;
   outline: none;
+
   &:hover {
     color: inherit;
     text-decoration: none;
@@ -51,5 +54,23 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+.preloader {
+  z-index: 999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #350909;
+  transition: all 300ms ease;
+
+  .icon {
+    max-width: 100px;
+  }
 }
 
