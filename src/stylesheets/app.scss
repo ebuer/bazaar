@@ -1,8 +1,12 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/vegas/src/sass/vegas";
+@import "../../node_modules/magnific-popup/src/css/main";
 //@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 //@import "normalize/import-now";
 @import "mixins/index";
 @import "base/global";
 @import "base/custom";
 @import "base/contact";
+@import "base/organisation";
+@import "base/sidebar";
+@import "base/main";

@@ -1,0 +1,16 @@
+<div class="link-sidebar">
+    <div class="sidebar-list">
+        {% for item in sidebar %}
+        <div class="list-item">
+            <div class="item-category"><h3 class="title">{{item.category.title}}</h3></div>
+            <div class="link-list">
+                <ul class="list">
+                    {% for subItem in item.subLinks %}
+                    <li class="item"><a class="link" href="#">{{subItem.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

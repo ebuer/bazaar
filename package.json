@@ -57,6 +57,7 @@
     "gulp-svgstore": "7.0.1",
     "jquery": "^3.4.0",
     "lodash": "^4.17.11",
+    "magnific-popup": "^1.1.0",
     "merge-stream": "^1.0.1",
     "minimist": "^1.2.0",
     "node-fs-extra": "^0.8.2",

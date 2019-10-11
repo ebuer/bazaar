@@ -1,0 +1,59 @@
+{% macro field(obj)%}
+<div class="main-content">
+    <div class="page-header">
+        <h3 class="page-title">{{obj.title}}</h3>
+        <div class="header-body" data-bg="{{obj.header.img}}">
+            <span class="overlay"></span>
+            <div class="content">
+                <div class="item title">
+                    <h3 class="text">{{obj.header.title}}</h3>
+                </div>
+                <div class="item caption">
+                    <p class="text">{{obj.header.text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-inner">
+        {% for main in obj.main %}
+        <div class="inner-item">
+            <div class="item-title">
+                <h4 class="title">{{main.title}}</h4>
+            </div>
+            <div class="item-article">
+                <p class="text">{{main.text}}</p>
+            </div>
+            <div class="item-packages">
+                {% for package in main.packages %}
+                <div class="package">
+                    <div class="title">
+                        <h5 class="text">{{package.title}}</h5>
+                    </div>
+                    <ul class="list">
+                        {% for listItem in package.list %}
+                        <li>{{listItem.text}}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="price">
+                        <h5 class="text">{{package.price}}</h5>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="item-images">
+                <h6>Resimler:</h6>
+                {% for image in main.images %}
+
+                <a class="image" href="{{image.src}}">
+                    <img class="js-image" src="{{image.src}}" alt="{{images.alt}}">
+                </a>
+
+                {% endfor %}
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endmacro %}

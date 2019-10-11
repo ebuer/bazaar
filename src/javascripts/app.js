@@ -1,8 +1,10 @@
 import '../../node_modules/bootstrap/dist/js/bootstrap.bundle'
 import '../../node_modules/vegas/dist/vegas.min'
 import '../../node_modules/@fortawesome/fontawesome-free/js/all'
+import '../../node_modules/magnific-popup/dist/jquery.magnific-popup.min'
 import './base/vue'
 import './base/custom'
+
 
 window.exist = function (selector) {
     return selector.length > 0 ? true : false
@@ -81,8 +83,27 @@ $(document).ready(function () {
     let footerHeight = $('.footer').height()
     $('.page').css('min-height', 'calc(100vh - ' + headerHeight + 'px - ' + footerHeight + 'px)')
 
+
+   if( $('.item-images').length > 0){
+       initGallery($('.item-images'))
+   }
+
+
     setTimeout(function () {
         preloader('hide')
     }, 500)
 
 });
+
+let initGallery = function (selector) {
+
+    $.each(selector, function (index, val) {
+        $(val).magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            gallery:{enabled:true},
+        });
+
+    })
+
+}

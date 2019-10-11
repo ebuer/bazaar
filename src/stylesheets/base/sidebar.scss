@@ -1,0 +1,27 @@
+.link-sidebar {
+  .sidebar-list {
+    .list-item {
+      .item-category {
+        .title {
+          border-bottom: 1px solid black;
+          padding: 10px 0;
+        }
+      }
+      .link-list {
+        padding-left: 8px;
+        .list {
+          .item {
+            padding: 2px 0;
+            .link {
+              transition: 300ms ease-in;
+              &:hover {
+                padding-left: 7px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

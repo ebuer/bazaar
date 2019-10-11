@@ -1,0 +1,123 @@
+@import "../mixins/index";
+
+.main-content {
+  .page-header {
+    .page-title {
+      border-bottom: 1px solid black;
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+
+    .header-body {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      height: 300px;
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
+        text-align: center;
+        width: 40%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+
+        .item {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          float: left;
+          width: 100%;
+          height: 30%;
+
+          .text {
+            margin: 0;
+            padding: 0;
+          }
+
+          &.caption {
+            height: 70%;
+            .text {
+              font-style: italic;
+              font-weight: 400;
+            }
+          }
+
+        }
+      }
+    }
+  }
+  .page-inner {
+    .inner-item {
+      .item-title {
+        margin: 5px 0;
+        .title {
+          margin: 0;
+        }
+      }
+      .item-article {
+        margin: 5px 0;
+        .text {
+          font-size: 13px;
+        }
+      }
+      .item-packages {
+        margin: 5px 0;
+        .package {
+          .list {
+            li {
+              font-size: 12px;
+              padding-left: 2px;
+              position: relative;
+              display: inline-block;
+              vertical-align: middle;
+              width: 100%;
+              &:before {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: 5px;
+                height: 2px;
+                background-color: red;
+                margin-right: 5px;
+              }
+            }
+          }
+          .price {
+            padding-top: 15px;
+            .text {
+              display: inline-block;
+              font-size: 15px;
+              border-bottom: 2px double #3F3F3F;
+            }
+          }
+        }
+      }
+      .item-images {
+        margin: 5px 0;
+        .image {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+  }
+}
