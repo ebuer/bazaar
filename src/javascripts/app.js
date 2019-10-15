@@ -45,7 +45,7 @@ $(document).ready(function () {
             },
             {src: '../images/wedding2.jpg', overlaytext: "Dans la composition et la mise en"},
             {src: '../images/wedding3.jpg', overlaytext: "İnformatique, sans que son"},
-            {src: '../images/wedding4.jpg', overlaytext: "De nombreuses suites logicielles de"}
+            {src: '../images/wedding4jpg', overlaytext: "De nombreuses suites logicielles de"}
         ],
         walk: function (index, slideSettings) {
             if ($('.js-slider-text').length === 0) $('.js-main-slider').append("<div class='slider-text js-slider-text'></div>");
@@ -84,9 +84,7 @@ $(document).ready(function () {
     $('.page').css('min-height', 'calc(100vh - ' + headerHeight + 'px - ' + footerHeight + 'px)')
 
 
-   if( $('.item-images').length > 0){
-       initGallery($('.item-images'))
-   }
+
 
 
     setTimeout(function () {
@@ -95,7 +93,7 @@ $(document).ready(function () {
 
 });
 
-let initGallery = function (selector) {
+window.initGallery = function (selector) {
 
     $.each(selector, function (index, val) {
         $(val).magnificPopup({

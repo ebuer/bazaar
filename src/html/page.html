@@ -11,7 +11,8 @@
                         <div class="main-content">
                             <div class="page-header">
                                 <h3 class="page-title">{{obj.title}}</h3>
-                                <div class="header-body" :data-bg="obj.header.img">
+<!--                                <div class="header-body" :data-bg="obj.header.img">-->
+                                <div class="header-body js-rondom-img">
                                     <span class="overlay"></span>
                                     <div class="content">
                                         <div class="item title">
@@ -24,31 +25,19 @@
                                 </div>
                             </div>
                             <div class="page-inner">
-                                <div class="inner-item" v-for="main in obj.main">
-                                    <div class="item-title">
-                                        <h4 class="title">{{main.title}}</h4>
+                                <div class="inner-item js-inner-item" v-for="(main, index) in obj.main" :data-index="index">
+<!--                                    <div class="item-title">-->
+<!--                                        <h4 class="title">{{main.title}}</h4>-->
+<!--                                    </div>-->
+                                    <div class="item-article js-item-article">
+
                                     </div>
-                                    <div class="item-article">
-                                        <p class="text">{{main.text}}</p>
-                                    </div>
-                                    <div class="item-packages">
-                                        <div class="package" v-for="package in main.packages">
-                                            <div class="title">
-                                                <h5 class="text">{{package.title}}</h5>
-                                            </div>
-                                            <ul class="list">
-                                                <li v-for="listItem in package.list">{{listItem.text}}</li>
-                                            </ul>
-                                            <div class="price">
-                                                <h5 class="text">{{package.price}}</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item-images">
+                                    <div class="item-images" v-if="main.images.length > 0">
                                         <h6>Resimler:</h6>
 
-                                        <a v-for="image in main.images" class="image" :href="image.src">
-                                            <img class="js-image" :src="image.src" :alt="image.alt">
+
+                                        <a v-for="image in main.images" class="image" :href="baseUrl+'/uploads/'+image.src">
+                                            <img class="js-image" :src="baseUrl+'/uploads/'+image.src" :alt="image.alt">
                                         </a>
 
                                     </div>
@@ -63,10 +52,10 @@
                         <div class="link-sidebar">
                             <div class="sidebar-list">
                                 <div class="list-item" v-for="item in sidebar">
-                                    <div class="item-category"><h3 class="title">{{item.category.title}}</h3></div>
+                                    <div class="item-category"><h3 class="title">{{item.name}}</h3></div>
                                     <div class="link-list">
                                         <ul class="list">
-                                            <li class="item" v-for="subItem in item.subLinks"><a class="link" :href="subItem.link">{{subItem.title}}</a></li>
+                                            <li class="item" v-for="subItem in item.sub"><a class="link" :href="'/page.html?page='+subItem.slug">{{subItem.name}}</a></li>
                                         </ul>
                                     </div>
                                 </div>
