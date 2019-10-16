@@ -5,6 +5,7 @@
         .title {
           border-bottom: 1px solid black;
           padding: 10px 0;
+          font-size: 18px;
         }
       }
       .link-list {
@@ -14,6 +15,7 @@
             padding: 2px 0;
             .link {
               transition: 300ms ease-in;
+              font-size: 13px;
               &:hover {
                 padding-left: 7px;
                 font-weight: bold;

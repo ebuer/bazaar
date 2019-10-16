@@ -36,28 +36,36 @@ window.preloader = function (method, selector) {
 $(document).ready(function () {
 
     // TODO get src and text from html
-    $('.js-main-slider').vegas({
-        delay: 5000,
-        slides: [
-            {
-                src: '../images/wedding1.jpg',
-                overlaytext: "Primerie depuis les années 1500, quand un imprimeur anonyme as"
-            },
-            {src: '../images/wedding2.jpg', overlaytext: "Dans la composition et la mise en"},
-            {src: '../images/wedding3.jpg', overlaytext: "İnformatique, sans que son"},
-            {src: '../images/wedding4jpg', overlaytext: "De nombreuses suites logicielles de"}
-        ],
-        walk: function (index, slideSettings) {
-            if ($('.js-slider-text').length === 0) $('.js-main-slider').append("<div class='slider-text js-slider-text'></div>");
 
-            let sliderText = $('.js-slider-text')
-            sliderText.removeClass('active')
-            setTimeout(function () {
-                sliderText.text(slideSettings.overlaytext).addClass('active')
-            }, 500)
+    axios.get('http://kapalicarsiorganizasyon.com/api/api.php/records/home_slider?filter=is_deleted,eq,0')
+        .then(res => {
+            const slides = res.data.records
+            const sliderArray = []
+            slides.forEach(function (data) {
+                sliderArray.push({
+                    src: '/uploads/' + data.src,
+                    overlaytext: data.overlaytext
+                })
+            })
 
-        }
-    });
+            if (sliderArray.length === 0) sliderArray.push({src: '../images/wedding2.jpg', overlaytext: "Kapalıçarşı"})
+
+            $('.js-main-slider').vegas({
+                delay: 5000,
+                slides: sliderArray,
+                walk: function (index, slideSettings) {
+                    if ($('.js-slider-text').length === 0) $('.js-main-slider').append("<div class='slider-text js-slider-text'></div>");
+
+                    let sliderText = $('.js-slider-text')
+                    sliderText.removeClass('active')
+                    setTimeout(function () {
+                        sliderText.text(slideSettings.overlaytext).addClass('active')
+                    }, 500)
+
+                }
+            });
+        })
+
 
     if (exist($('.page.main'))) {
         let elements = $('.js-auto-height')
@@ -84,9 +92,6 @@ $(document).ready(function () {
     $('.page').css('min-height', 'calc(100vh - ' + headerHeight + 'px - ' + footerHeight + 'px)')
 
 
-
-
-
     setTimeout(function () {
         preloader('hide')
     }, 500)
@@ -99,7 +104,7 @@ window.initGallery = function (selector) {
         $(val).magnificPopup({
             delegate: 'a',
             type: 'image',
-            gallery:{enabled:true},
+            gallery: {enabled: true},
         });
 
     })
