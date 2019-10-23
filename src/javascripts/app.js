@@ -110,3 +110,33 @@ window.initGallery = function (selector) {
     })
 
 }
+
+
+$.fn.serializeObject = function () {
+    let o = {};
+    const a = this.serializeArray();
+    $.each(a, function () {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
+
+
+$('.js-contact-form').on('submit', function (e) {
+    e.preventDefault();
+    let form = $(this)
+    let data = form.serializeObject()
+
+    axios.post('http://kapalicarsiorganizasyon.com/api/sendMall.php')
+        .then(res => {
+            console.log('ok')
+        })
+    console.log(data)
+})

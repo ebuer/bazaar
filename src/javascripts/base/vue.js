@@ -117,5 +117,20 @@ if ($('#main-page').length > 0) {
     });
 }
 
+if ($('#about').length > 0) {
+    let aboutPage = new Vue({
+        el: '#about',
+        data: {
+            text: ''
+        },
+        created() {
+            const self = this;
+            axios.get('http://kapalicarsiorganizasyon.com/api/api.php/records/about/1')
+                .then(res => {
+                    $('.js-about-text').html(res.data.text)
+                })
+        }
+    })
+}
 
 console.groupEnd();
