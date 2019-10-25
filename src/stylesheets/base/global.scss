@@ -75,7 +75,39 @@ ul {
 }
 
 .page {
-  .page-content{
+  .page-content {
     padding: 50px 0;
   }
 }
+
+//.suprize {
+//  display: flex;
+//  opacity: 0;
+//  transition: all 500ms ease-in-out;
+//  position: fixed;
+//  width: 100vw;
+//  height: 100vh;
+//  text-align: center;
+//  justify-content: center;
+//  align-items: center;
+//  color: #fff8cd;
+//  background: #ffa0d2;
+//  top: 0;
+//  left: 0;
+//
+//  .heart-img {
+//    max-width: 80%;
+//    transition: all 700ms ease-in;
+//    transition-delay: 200ms;
+//    transform: translateY(280px)
+//
+//  }
+//
+//  &.active {
+//    opacity: 1;
+//
+//    .heart-img {
+//      transform: translateY(0)
+//    }
+//  }
+//}
