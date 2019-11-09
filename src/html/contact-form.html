@@ -2,11 +2,12 @@
 {% block content %}
 
 
-<div class="page contact-form">
+<div id="contact-form" class="page contact-form">
     <div class="container">
         <div class="page-content">
             <h3 class="title">TALEP FORMU</h3>
-            <form class="js-contact-form">
+            <div id="form-status"></div>
+            <form action="mail.php" method="post">
                 <div class="form-group">
                     <label for="cf_1">Adınız ve Soyadınız</label>
                     <input type="text" class="form-control" id="cf_1" name="nameSurname">
@@ -17,7 +18,8 @@
                         <div class="row">
                             {% for item in contactForm.services %}
                             <div class="col-6 col-md-4">
-                                <input type="checkbox" class="form-check-input" name="services_{{loop.index}}[]" value="{{item.text}}" id="services_{{loop.index}}">
+<!--                                <input type="checkbox" class="form-check-input" name="services_{{loop.index}}[]" value="{{item.text}}" id="services_{{loop.index}}">-->
+                                <input type="checkbox" class="form-check-input" name="services[]" value="{{item.text}}" id="services_{{loop.index}}">
                                 <label class="form-check-label" for="services_{{loop.index}}">{{item.text}}</label>
                             </div>
                             {% endfor %}
@@ -27,11 +29,11 @@
                 </div>
                 <div class="form-group">
                     <label for="cf_3">Ne Yapılmasını İstiyorsunuz?</label>
-                    <textarea class="form-control" id="cf_3" rows="3"></textarea>
+                    <textarea class="form-control" name="content" id="cf_3" rows="3"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="cf_4">Nerede?</label>
-                    <input type="text" class="form-control" id="cf_4" name="city" placeholder="Şehir, Organizasyon Mekanı">
+                    <input type="text" class="form-control" id="cf_4" name="place" placeholder="Şehir, Organizasyon Mekanı">
                 </div>
                 <div class="form-group">
                     <label for="cf_5">Kişi Sayısı?</label>
@@ -42,19 +44,19 @@
 
                    <div class="row">
                        <div class="col">
-                           <input class="form-control" type="date">
+                           <input class="form-control" type="date" name="date">
                        </div>
-                       <div class="col">
-                           <div>Veya</div>
-                           {% for item in contactForm.times %}
-                           <div class="form-check">
-                               <input class="form-check-input" type="radio" name="time" id="time_{{loop.index}}" value="{{item.text}}">
-                               <label class="form-check-label" for="time_{{loop.index}}">
-                                   {{item.text}}
-                               </label>
-                           </div>
-                           {% endfor %}
-                       </div>
+<!--                       <div class="col">-->
+<!--                           <div>Veya</div>-->
+<!--                           {% for item in contactForm.times %}-->
+<!--                           <div class="form-check">-->
+<!--                               <input class="form-check-input" type="radio" name="time" id="time_{{loop.index}}" value="{{item.text}}">-->
+<!--                               <label class="form-check-label" for="time_{{loop.index}}">-->
+<!--                                   {{item.text}}-->
+<!--                               </label>-->
+<!--                           </div>-->
+<!--                           {% endfor %}-->
+<!--                       </div>-->
                    </div>
 
 
@@ -67,6 +69,17 @@
                     <label for="cf_7">E-Mail Adresiniz?</label>
                     <input type="email" class="form-control" id="cf_7" name="mail">
                 </div>
+
+                <script>
+                    window.onloadCallback = function () {
+                        grecaptcha.render('captcha_div', {
+                            'sitekey': '6LeX3sEUAAAAAH-DqbM_hWHy7k_KbE6dz2zRNcsn'
+                        });
+                    };
+                </script>
+                <div id="captcha_div"></div>
+                <br>
+                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
                 <button type="submit" class="btn btn-primary">Gönder</button>
             </form>

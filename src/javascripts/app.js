@@ -79,6 +79,29 @@ $(document).ready(function () {
         elements.height(maxHeight)
     }
 
+    if (exist($('#contact-form'))) {
+
+            let getUrl = window.location.href
+            let success = getUrl.split('formSend=')
+            let text = 'Mesajınız Başarıyla Gönderilmiştir';
+            let status = 'alert-success'
+            if (success.length > 1) {
+                if (success[1] !== 'success') {
+                    if (success[1] === 'captchaError') {
+                        text = 'Robot Değilim işaretlenmeli'
+                    } else {
+                        text = 'Hata Meydana Geldi'
+                    }
+
+                    status = 'alert-danger'
+                }
+                let template = '<div class="alert ' + status + '">' + text + '</div>'
+                $('#form-status').html(template)
+            }
+
+
+    }
+
 
     $.each($('[data-bg]'), function (key, val) {
         const self = $(val)
@@ -144,7 +167,6 @@ $('.js-contact-form').on('submit', function (e) {
 
 
 // suprize
-
 
 
 // var onlongtouch;
